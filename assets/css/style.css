@@ -1,0 +1,16 @@
+button {
+  background-color: burlywood;
+  font-size: 1.2em;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: teal;
+}
+
+.gifDiv {
+  float: left;
+  margin: 10px;
+}
