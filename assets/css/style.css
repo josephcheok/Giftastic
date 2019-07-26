@@ -1,3 +1,9 @@
+body {
+  /* background-image: url(../images/Lovely-Jungle-Wallpaper.jpg);
+  background-size: 1650px; */
+  background-color: lightgrey;
+}
+
 button {
   background-color: burlywood;
   font-size: 1.2em;
@@ -10,7 +16,37 @@ button:hover {
   background-color: teal;
 }
 
+form {
+  text-align: right;
+}
+
+label {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+#animal-input {
+  font-size: 1.2em;
+}
+
+#add-animal {
+  background-color: burlywood;
+  font-size: 1.2em;
+  margin: 5px;
+}
+
 .gifDiv {
   float: left;
   margin: 10px;
+  overflow: auto;
+}
+
+.gif {
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 200px;
+}
+
+.gif:hover {
+  border: solid green 4px;
 }

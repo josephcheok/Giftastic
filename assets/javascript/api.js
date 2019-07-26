@@ -56,9 +56,10 @@ $(document).ready(function() {
         console.log(response);
         for (i = 0; i < gifArray.length; i++) {
           // Saving the image_original_url property
-          var imageUrl = gifArray[i].images.fixed_height.url;
+          var imageUrlStill = gifArray[i].images.fixed_height_still.url;
+          var imageUrlAnimate = gifArray[i].images.fixed_height.url;
           // var imageUrl = gifArray[i].url;
-          console.log(imageUrl);
+          console.log(imageUrlStill);
           // Creating and storing an image tag
           var gifDiv = $("<div>");
           var animalImage = $("<img>");
@@ -67,8 +68,12 @@ $(document).ready(function() {
           var p = $("<p>").text("Rating: " + rating);
 
           // Setting the animalImage src attribute to imageUrl
-          animalImage.attr("src", imageUrl);
+          animalImage.attr("src", imageUrlStill);
+          animalImage.attr("data-still", imageUrlStill);
+          animalImage.attr("data-animate", imageUrlAnimate);
+          animalImage.attr("data-state", "still");
           animalImage.attr("alt", "animal image");
+          animalImage.addClass("gif");
 
           // Prepending the catImage to the images div
 
@@ -79,6 +84,21 @@ $(document).ready(function() {
         }
       });
   }
+
+  function changeGifState() {
+    var state = $(this).attr("data-state");
+    // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+    // Then, set the image's data-state to animate
+    if (state === "still") {
+      $(this).attr("src", $(this).attr("data-animate"));
+      $(this).attr("data-state", "animate");
+      // Else set src to the data-still value
+    } else {
+      $(this).attr("src", $(this).attr("data-still"));
+      $(this).attr("data-state", "still");
+    }
+  }
+
   // This function handles events where a movie button is clicked
   $("#add-animal").on("click", function(event) {
     event.preventDefault();
@@ -96,6 +116,9 @@ $(document).ready(function() {
 
   // Adding a click event listener to all elements with a class of "movie-btn"
   $(document).on("click", ".animal-button", displayGif);
+
+  //Clicking on the still image animates it and vice versa.
+  $(document).on("click", ".gif", changeGifState);
 
   // Calling the renderButtons function to display the intial buttons
   renderButtons();
