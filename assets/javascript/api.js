@@ -177,5 +177,6 @@ $(document).ready(function() {
   // Calling the renderButtons function to display the intial buttons
   renderButtons();
 
+  favArray = JSON.parse(localStorage.getItem("Favourites"));
   renderFavourites();
 });
