@@ -4,7 +4,8 @@ body {
   background-color: lightgrey;
 }
 
-button {
+button,
+.gifArrayBtns {
   background-color: burlywood;
   font-size: 1.2em;
   padding: 5px;
@@ -35,7 +36,7 @@ label {
   margin: 5px;
 }
 
-.gifDiv {
+.cardDiv {
   float: left;
   margin: 10px;
   overflow: auto;
@@ -49,4 +50,19 @@ label {
 
 .gif:hover {
   border: solid green 4px;
+}
+
+.fa-heart:hover {
+  color: red;
+  cursor: pointer;
+}
+
+#sectionbreak {
+  clear: both;
+}
+
+.favImg {
+  height: 150px;
+  width: 200px;
+  margin: 10px;
 }
