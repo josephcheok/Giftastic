@@ -154,6 +154,14 @@ $(document).ready(function() {
     localStorage.setItem("Favourites", JSON.stringify(favArray));
   }
 
+  // create on clicks to clear favourites
+  $("#clearFavourites").click(function() {
+    event.preventDefault();
+    localStorage.removeItem("Favourites");
+    favArray = [];
+    $("#favourites").empty();
+  });
+
   // This function handles events where the add abunak button is clicked
   $("#add-animal").on("click", function(event) {
     event.preventDefault();

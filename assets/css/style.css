@@ -66,3 +66,7 @@ label {
   width: 200px;
   margin: 10px;
 }
+
+#clearFavourites {
+  background-color: yellow;
+}
