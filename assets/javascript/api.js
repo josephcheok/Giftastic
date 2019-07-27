@@ -186,5 +186,9 @@ $(document).ready(function() {
   renderButtons();
 
   favArray = JSON.parse(localStorage.getItem("Favourites"));
+  if (!Array.isArray(favArray)) {
+    favArray = [];
+  }
+
   renderFavourites();
 });
